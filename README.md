@@ -3,7 +3,7 @@
 
 A Gemini-powered campus lost-and-found agent that helps students locate belongings while protecting the identifying details needed to support a claim.
 
-**Status:** Project initialized for Badger BuildFest 2026. This README describes the planned prototype; implementation and evaluation results are forthcoming.
+**Status:** Working local prototype for Badger BuildFest 2026. Evaluation and student-feedback records are included as honest templates and have not been completed yet.
 
 ## The problem
 
@@ -37,6 +37,16 @@ The demo uses fictional inventory. Real campus systems, accounts, and physical i
 - A local fixture database for found items and claims.
 - Server-side validation and restricted access to identifying details.
 - API credentials supplied through environment variables and excluded from version control.
+
+## Run locally
+
+Requires Node.js 24 or later. Copy `.env.example` to an ignored `.env`, set `GEMINI_API_KEY` and `STAFF_TOKEN`, then run:
+
+```sh
+npm start
+```
+
+Open `http://127.0.0.1:3000`. The core demo is: report black Sony headphones at Memorial Library, describe the blue star sticker inside the left earcup, submit the pending claim, then open **Staff review** with the local staff token. Gemini is the primary assistant; if the provider is temporarily unavailable, the server uses the same public-only inventory to keep the fictional demo flow usable.
 
 ## Badger BuildFest 2026
 
