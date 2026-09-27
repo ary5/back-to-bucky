@@ -20,8 +20,8 @@ function saveClaims(){saving=saving.then(async()=>{await mkdir(resolve(root,'.lo
 function fallbackTurn(session, message) {
   // Keeps the fictional demo usable if Gemini is temporarily rate-limited or unavailable.
   // It uses the same public-only inventory and still leaves ownership to staff review.
+  if (session.evidence.at(-1)?.message !== message.trim()) session.evidence.push({message:message.trim(),createdAt:new Date().toISOString()});
   if (!session.candidates.length) {
-    if (session.evidence.at(-1)?.message !== message.trim()) session.evidence.push({message:message.trim(),createdAt:new Date().toISOString()});
     session.candidates=searchItems(message); session.candidates.forEach(item=>session.candidateIds.add(item.id));
     return {message:session.candidates.length ? 'I found a possible match. Describe any identifying marks, accessories, or contents only the owner would know, and I’ll prepare a claim for staff review.' : 'I could not find a close match yet. Tell me the item type, where you last had it, and about when.',candidates:session.candidates,activity:['Searched fictional inventory in demo fallback.'],claimDraft:null};
   }
