@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#a6192e">
+  <title>Back to Bucky · Campus lost & found</title>
+  <link rel="stylesheet" href="/styles.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <a class="brand" href="/" aria-label="Back to Bucky home"><span class="brand-mark" aria-hidden="true">B↩</span><span>Back to Bucky<span class="brand-sub">CAMPUS LOST & FOUND</span></span></a>
+    <nav aria-label="Main navigation"><button class="nav-button active" id="student-tab" aria-pressed="true">Find my item</button><button class="nav-button" id="staff-tab" aria-pressed="false">Staff review</button></nav>
+  </header>
+  <main>
+    <section id="student-view">
+      <div class="intro"><span class="eyebrow">A LITTLE LOST. NOT FOR LONG.</span><h1>Lost on campus.<br><span>Back where it belongs.</span></h1><p>Describe what you lost. We’ll look for possible matches and help you send a claim to staff.</p></div>
+      <div class="workspace">
+        <section class="chat-card" aria-label="Lost item assistant">
+          <div class="card-heading"><div><span class="status-dot"></span><strong>Your lost & found assistant</strong></div><button class="text-button" id="reset-chat">Start over</button></div>
+          <div id="messages" class="messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+          <div class="suggestions" id="suggestions"><button data-prompt="I lost black Sony headphones at the library yesterday.">🎧 Missing headphones</button><button data-prompt="I lost my water bottle on campus. Can you help me find it?">💧 Missing water bottle</button></div>
+          <div id="activity" class="activity" aria-live="polite"></div>
+          <form id="chat-form" class="composer"><label class="sr-only" for="message-input">Describe your lost item</label><textarea id="message-input" rows="2" maxlength="4000" placeholder="What did you lose, and where did you last see it?" required></textarea><button class="primary send" id="send-button" type="submit">Send <span aria-hidden="true">↗</span></button></form>
+          <p class="input-note">Describe your item’s marks or accessories. Please don’t enter passwords, IDs, or contact details.</p>
+        </section>
+        <aside class="side-column">
+          <section class="matches-card"><div class="section-label">THE SEARCH</div><h2>Possible matches</h2><div id="matches"><div class="empty-state"><span aria-hidden="true">⌕</span><p>Your matches will appear here.<br>Start with the item, place, and approximate time.</p></div></div></section>
+          <section id="claim-panel" class="claim-panel" hidden></section>
+          <section class="how-card"><span class="section-label">A CAREFUL HANDOFF</span><h2>Finding is the first step.</h2><ol><li><strong>Describe it</strong><span>Tell us what you remember.</span></li><li><strong>Add your details</strong><span>Describe the marks that make it yours.</span></li><li><strong>Staff reviews your claim</strong><span>A possible match isn’t proof of ownership.</span></li></ol></section>
+        </aside>
+      </div>
+    </section>
+    <section id="staff-view" hidden>
+      <div class="intro staff-intro"><span class="eyebrow">THE HUMAN PART OF THE HANDOFF</span><h1>Claim review.</h1><p>Compare student descriptions with the fictional inventory. Every claim remains pending human review.</p></div>
+      <form id="staff-form" class="staff-access"><div><label for="staff-token">Staff access token</label><input id="staff-token" type="password" autocomplete="off" placeholder="Enter your demo staff token" required></div><button class="primary" type="submit">Load claims</button><button class="text-button" id="staff-lock" type="button">Lock view</button></form>
+      <p id="staff-status" role="status"></p><div id="staff-claims" class="staff-claims"></div>
+    </section>
+    <footer><span class="prototype-label">Fictional inventory · Prototype</span><span>Built for Badgers at BuildFest · Not an official UW service</span></footer>
+  </main>
+</body>
+</html>

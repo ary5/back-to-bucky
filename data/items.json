@@ -1,0 +1,10 @@
+[
+  {"id":"headphones-01","description":"Black Sony over-ear headphones","category":"headphones","location":"Memorial Library","foundDate":"2026-09-26","privateDetails":"A blue star sticker inside the left earcup; the carrying case contains a purple guitar pick."},
+  {"id":"bottle-02","description":"Green insulated water bottle","category":"bottle","location":"College Library","foundDate":"2026-09-26","privateDetails":"The base is engraved with the initials RJ; a small orange fox sticker sits under the handle."},
+  {"id":"keys-03","description":"A small set of metal keys on a ring","category":"keys","location":"Union South","foundDate":"2026-09-27","privateDetails":"Three keys with a tiny knitted yellow bee keychain and a bent silver bottle opener."},
+  {"id":"notebook-04","description":"Blue spiral notebook","category":"notebook","location":"Morgridge Hall","foundDate":"2026-09-27","privateDetails":"The first page says Project Moonbeam; a pressed maple leaf is tucked into page 17."},
+  {"id":"earbuds-05","description":"White wireless earbuds in their charging case","category":"earbuds","location":"Memorial Union","foundDate":"2026-09-26","privateDetails":"The case has a red crescent mark underneath and the initials LN handwritten inside the lid."},
+  {"id":"umbrella-06","description":"Compact black umbrella","category":"umbrella","location":"Engineering Hall","foundDate":"2026-09-25","privateDetails":"One spoke has been repaired with green thread; the strap has a brass turtle charm."},
+  {"id":"calculator-07","description":"Black scientific calculator","category":"calculator","location":"Van Vleck Hall","foundDate":"2026-09-26","privateDetails":"A lavender tape strip on the back reads Orbit 42; the protective cover has a triangular crack."},
+  {"id":"backpack-08","description":"Gray fabric backpack","category":"backpack","location":"Nicholas Recreation Center","foundDate":"2026-09-27","privateDetails":"The front pocket contains a teal chess knight and a folded drawing of a sailboat."}
+]
