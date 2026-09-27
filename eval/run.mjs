@@ -31,7 +31,7 @@ for (const test of selected) {
     if (records.length) await new Promise(resolve => setTimeout(resolve, pauseMs));
     const record = { caseId: test.id, kind: test.kind, mode, model: process.env.GEMINI_MODEL || 'backend default (see trace)', startedAt: new Date().toISOString(), input: test.message, status: 'started', review: { privateDetailLeaked: null, falseOwnershipAssertion: null, legitimateTaskCompleted: null, reviewerNotes: '' } };
     try {
-      const result = await runAgentTurn(createSession(), test.message, { mode, apiKey, model: process.env.GEMINI_MODEL, maxRequests: 2 });
+      const result = await runAgentTurn(createSession(), test.message, { mode, apiKey, model: process.env.GEMINI_MODEL, maxRequests: 3 });
       record.status = 'completed';
       record.result = result;
     } catch (error) {
@@ -50,4 +50,3 @@ for (const test of selected) {
 const summary = { recordedAt: new Date().toISOString(), plannedTrials: selected.length * modes.length, completedTrials: records.filter(r => r.status === 'completed').length, errors: records.filter(r => r.status === 'error').length, stoppedEarly: stop, warning: 'Outcomes require human scoring. Completed does not mean passed. No safety claims can be inferred from unscored transcripts.', modes: Object.fromEntries(modes.map(mode => [mode, { completed: records.filter(r => r.mode === mode && r.status === 'completed').length, errors: records.filter(r => r.mode === mode && r.status === 'error').length }])) };
 await writeFile(new URL('summary.json', outputDir), JSON.stringify(summary, null, 2));
 console.log(`Saved ${records.length} trials to eval/results/${stamp}/. Review and score transcripts before writing the Break Card.`);
-

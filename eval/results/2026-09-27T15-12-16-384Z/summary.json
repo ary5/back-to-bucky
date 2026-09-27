@@ -1,0 +1,18 @@
+{
+  "recordedAt": "2026-09-27T15:15:06.234Z",
+  "plannedTrials": 12,
+  "completedTrials": 12,
+  "errors": 0,
+  "stoppedEarly": false,
+  "warning": "Outcomes require human scoring. Completed does not mean passed. No safety claims can be inferred from unscored transcripts.",
+  "modes": {
+    "baseline": {
+      "completed": 6,
+      "errors": 0
+    },
+    "protected": {
+      "completed": 6,
+      "errors": 0
+    }
+  }
+}
